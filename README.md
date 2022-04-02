@@ -19,3 +19,7 @@ Populate dummy data `rails db:seed`
 - How to run server
 
 Run command `rails s`
+
+- Demo
+
+https://www.loom.com/share/6f0527d72a30480a96b70dc9376ae368
