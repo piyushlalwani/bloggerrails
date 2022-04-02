@@ -13,3 +13,56 @@
  *= require_tree .
  *= require_self
  */
+
+.error ul {
+  color: red;
+}
+
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: bisque;
+  font-size: 15px;
+}
+
+.alert-info .alert-link {
+  color: #245269;
+}
+
+.button {
+  background-color: rgb(98, 100, 213); /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.show-head {
+  font-size: 32px;
+}
+
+.show-value {
+  font-size: 28px;
+}
+
+.blogs-container {
+  font-size: 20px;
+  font-weight: 500;
+  color: crimson;
+}
+
+.blogs-container ul li a {
+  color: blueviolet;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.blogs-container ul li a:hover {
+  color: rgb(85, 20, 85);
+}

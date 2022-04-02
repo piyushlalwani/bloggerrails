@@ -1,15 +1,19 @@
-<% flash.each do |f| %>
-  <div>
-    <%= f[1] %>
+<% flash.each do |type, msg| %>
+  <div class="alert alert-info">
+    <%= msg %>
   </div>
 <% end %>
-<h1>Blog<h1>
-<ul>
-  <% @blogs.each do |blog| %>
-    <li>
-      <%= link_to blog.title, blog_path(blog.id)  %>
-    </li>
-  <% end %>
-</ul>
 
-<%= link_to "Create Blog", new_blog_path %>
+<h1>Blog<h1>
+<div class="blogs-container">
+  <ul>
+    <% @blogs.each do |blog| %>
+      <li>
+        <%= link_to blog.title, blog_path(blog.id)  %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+
+<%= button_to "Create Blog", new_blog_path, method: "get", class: "button" %>

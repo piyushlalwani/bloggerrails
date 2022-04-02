@@ -1,13 +1,26 @@
-<% flash.each do |f| %>
-  <div>
-    <%= f[1] %>
+<% flash.each do |type, msg| %>
+  <div class="alert alert-info">
+    <%= msg %>
   </div>
 <% end %>
 
-Title: <%= @blog&.title %>
-Author Type: <%= @blog&.author_type %>
-Body: <%= @blog&.content %>
+<h1>Viewing Blog</h1>
 
-<%= link_to "Edit Blog", edit_blog_path(@blog&.id) %>
-<%= link_to "Delete Blog", blog_path(@blog&.id), method: "delete", data: { confirm: "Are you sure, you want to delete blog?" } %>
-<%= link_to "Back to Home", root_path %>
+<div>
+  <span class="show-head">Title: <span>
+  <span class="show-value"><%= @blog&.title %><span>
+</div>
+
+<div>
+  <span class="show-head">Author Type: <span>
+  <span class="show-value"><%= @blog&.author_type %><span>
+</div>
+
+<div style="padding-bottom: 15px;">
+  <span class="show-head">Body: <span>
+  <span class="show-value"><%= @blog&.content %><span>
+</div>
+
+<div style="padding-bottom: 5px"><%= link_to "Edit Blog", edit_blog_path(@blog&.id), method: "get", class: "button" %></div>
+<div style="padding-bottom: 5px"><%= link_to "Delete Blog", blog_path(@blog&.id), method: "delete", class: "button", data: { confirm: "Are you sure, you want to delete blog?" } %></div>
+<div style="padding-bottom: 5px"><%= link_to "Back to Home", root_path, method: "get", class: "button" %></div>

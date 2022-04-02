@@ -20,7 +20,6 @@ class BlogsController < ApplicationController
     if @blog.save
       redirect_to @blog, notice: "Added Blog"
     else
-      flash[:notice] = @blog.errors.map{|error| @blog.errors.full_messages_for(error)}
       render :new, status: :unprocessable_entity 
     end
   end
@@ -38,7 +37,7 @@ class BlogsController < ApplicationController
     @blog = Blog.find_by(id: params[:id])
     @blog.destroy
 
-    redirect_to root_path, status: 303
+    redirect_to root_path, status: 303, notice: "Deleted Blog"
   end
 
   private
