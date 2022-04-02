@@ -1,0 +1,13 @@
+<% flash.each do |f| %>
+  <div>
+    <%= f[1] %>
+  </div>
+<% end %>
+
+Title: <%= @blog&.title %>
+Author Type: <%= @blog&.author_type %>
+Body: <%= @blog&.content %>
+
+<%= link_to "Edit Blog", edit_blog_path(@blog&.id) %>
+<%= link_to "Delete Blog", blog_path(@blog&.id), method: "delete", data: { confirm: "Are you sure, you want to delete blog?" } %>
+<%= link_to "Back to Home", root_path %>

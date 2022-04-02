@@ -1,0 +1,19 @@
+<%= form_with model: blog, remote: true do |form| %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+    <% blog.errors.full_messages_for(:title).each do |message| %>
+      <h2><%= message %></h2>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :author_type %>
+    <%= form.select :author_type, ['User', 'Guest', 'Admin'] %>
+  </div>
+  <div>
+    <%= form.label :content %>
+    <%= form.rich_text_area :content %>
+  </div>
+
+  <%= form.submit %>
+<% end %>

@@ -1,0 +1,15 @@
+<% flash.each do |f| %>
+  <div>
+    <%= f[1] %>
+  </div>
+<% end %>
+<h1>Blog<h1>
+<ul>
+  <% @blogs.each do |blog| %>
+    <li>
+      <%= link_to blog.title, blog_path(blog.id)  %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Create Blog", new_blog_path %>
